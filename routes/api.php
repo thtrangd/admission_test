@@ -13,6 +13,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::apiResource('applications', ApplicationController::class);
 
-Route::post('applications/{id}/status', [ApplicationStatusController::class, 'updateStatus']);
+Route::post('/applications/{id}/status', [ApplicationController::class, 'updateStatus']);
 Route::post('registrations', [RegistrationController::class, 'store']);
 Route::post('applications/{id}/reminder', [ReminderController::class, 'sendReminder']);
+
